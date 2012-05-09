@@ -8,7 +8,6 @@ $plugin = array(
     'category' => t('HTML Head'),
     'no title override' => TRUE,
     'single' => TRUE,
-    'required context' => new ctools_context_required(t('Node'), 'node'),
 );
 
 /**

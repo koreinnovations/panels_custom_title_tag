@@ -1,3 +1,4 @@
 name=Panels Custom Title Tag
 core=7.x
 dependencies[] = panels
+dependencies[] = page_title
