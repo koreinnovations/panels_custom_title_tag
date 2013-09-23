@@ -8,6 +8,7 @@ $plugin = array(
     'category' => t('HTML Head'),
     'no title override' => TRUE,
     'single' => TRUE,
+    'all contexts' => TRUE,
 );
 
 /**
@@ -19,6 +20,9 @@ function panels_custom_title_tag_render($subtype, $conf, $args, $contexts) {
   global $panels_custom_title_pattern;
 
   if (isset($conf['custom_page_title_pattern'])) {
+    // Perform token/keyword substitution
+    $conf['custom_page_title_pattern'] = ctools_context_keyword_substitute($conf['custom_page_title_pattern'], array(), $contexts);
+
     // Set the title tag pattern here:
     $panels_custom_title_pattern = $conf['custom_page_title_pattern'];
   }
